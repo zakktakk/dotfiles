@@ -1,0 +1,102 @@
+# Brewfile
+# author : zakktakk
+
+cask_args appdir: '/Applications'
+
+## brew
+tap 'homebrew/cask'
+brew 'mas' # Mac App Store command-line interface
+
+## Editor
+brew 'vim' # Vi 'workalike' with many additional features
+cask 'visual-studio-code' # Microsoft Visual Studio Code
+
+## Utility
+brew 'rmtrash' 
+brew 'autojump'
+brew 'the_silver_searcher' # A code searching tool, with a focus on speed.
+
+## Git
+brew 'git' # Distributed revision control system
+brew 'tig' # Text interface for Git repositories
+brew 'git-lfs' # Git extension for versioning large files
+cask 'github' # Extend your GitHub workflow beyond your browser
+brew 'ghq' # Remote repository management made easy
+
+## Python
+brew 'python'
+brew 'python@2'
+brew 'pyenv' # Python version management
+brew 'pyenv-virtualenv' # Pyenv plugin to manage virtualenv
+
+## Terminal
+cask 'iterm2'
+brew 'screen' # Terminal multiplexer with VT100/ANSI terminal emulation
+brew 'tmux'  # A terminal multiplexer, allowing to access multiple separate terminal sessions
+brew 'tree' # Display directories as tree
+brew 'fzf' # Command-line fuzzy finder written in Go
+brew 'htop-osx' # Improved top (interactive process viewer) for macOS
+brew 'z' # Tracks most-used directories to make cd smarter
+
+## VM
+cask 'virtualbox' # Oracle VirtualBox
+cask 'vagrant' # Tool for building and managing virtual machine environments
+cask 'vagrant-manager' # Manage your vagrant machines in one place
+
+## DB
+brew 'sqlite' # SQLite
+brew 'mysql' # MySQL
+
+## Font
+cask 'homebrew/cask-fonts/font-fontawesome'
+cask 'homebrew/cask-fonts/font-material-icons'
+cask 'homebrew/cask-fonts/font-devicons'
+
+## Web
+brew 'wget' # Internet file retriever
+cask 'postman' # API Development Environment
+cask 'paw' # The most advanced API tool for Mac
+brew 'hugo' # Configurable static site generator 
+cask 'google-chrome'
+brew 'chromedriver'
+brew 'phantomjs' # Headless WebKit scriptable with a JavaScript API
+
+## Misc
+brew 'gcc'
+brew 'openssl'
+brew 'awscli'
+brew 'graphviz' # Graph visualization software
+brew 'pandoc' # Swiss-army knife of markup format conversion
+brew 'llvm'
+brew 'node'
+brew 'mecab'
+brew 'nmap'
+
+## zsh
+brew 'zsh-completions' # Additional completion definitions for zsh
+brew 'zsh-syntax-highlighting' # Fish shell like syntax highlighting for zsh
+
+## docker
+cask 'docker'
+brew 'docker-compose'
+
+## Keyboard & Mouse
+cask 'bettertouchtool'
+cask 'karabiner-elements'
+cask 'cheatsheet'
+
+## Chat Tools
+cask 'slack'
+cask 'discord'
+cask 'zoomus'
+
+## Util App
+cask '1password'
+cask 'notion'
+cask 'alfred'
+cask 'onyx'
+
+## Apps from App Store
+mas 'Kindle', id: 405399194
+mas 'LINE', id: 539883307
+mas 'Magnet', id: 441258766
