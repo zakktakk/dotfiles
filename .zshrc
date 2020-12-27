@@ -1,8 +1,8 @@
 # brew setting
 typeset -U path PATH
 path=(
-    /opt/homebrew/bin(N-/)
     /usr/local/bin(N-/)
+    /opt/homebrew/bin(N-/)
     $path
 )
 
