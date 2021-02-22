@@ -1,5 +1,6 @@
 " must be first
 set nocompatible " isn't compatible with vim
+filetype off " required
 
 " --- default setting
 syntax on
@@ -48,7 +49,7 @@ set noswapfile " never make swap file
 
 " -- color setting
 set background=dark
-colorscheme murphy
+colorscheme hybrid
 
 " --- key mapping
 "  nnoremap -> normal mode keymapping, inoremap -> insert mode keymapping,
@@ -91,3 +92,46 @@ inoremap ,time <C-R>=strftime('%H:%M')<CR>
 imap { {}<LEFT>
 imap ( ()<LEFT>
 imap [ []<LEFT>
+
+" Nerdtree setting
+let NERDTreeShowHidden = 1
+let g:nerdtree_tabs_open_on_console_startup=1
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+let NERDTreeIgnore = ['\.pyc$','\.DS_Store$','\.swp$','\.git$','\.ipynb_checkpoints$']
+let g:NERDTreeIndicatorMapCustom = {
+    \ "Modified"  : "✹",
+    \ "Staged"    : "✚",
+    \ "Untracked" : "✭",
+    \ "Renamed"   : "➜",
+    \ "Unmerged"  : "═",
+    \ "Deleted"   : "✖",
+    \ "Dirty"     : "✗",
+    \ "Clean"     : "✔︎",
+    \ "Unknown"   : "?"
+    \ }
+
+" gitgutter
+let g:gitgutter_max_signs = 500  " default value (Vim < 8.1.0614, Neovim < 0.4.0)
+let g:gitgutter_max_signs = -1   " default value (otherwise)
+nmap ]h <Plug>(GitGutterNextHunk)
+nmap [h <Plug>(GitGutterPrevHunk)
+
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim' " let Vundle manage Vundle, required
+Plugin 'w0ng/vim-hybrid' " A dark colour scheme for Vim
+Plugin 'preservim/nerdtree' " a file system explorer for the Vim
+Plugin 'tpope/vim-fugitive' " the premier Vim plugin for Git
+Plugin 'tpope/vim-surround' " The plugin provides mappings to easily delete, change and add such surroundings in pairs
+Plugin 'airblade/vim-gitgutter' " A Vim plugin which shows a git diff in the sign column
+Plugin 'ryanoasis/vim-devicons' " NerdTree devicon
+Plugin 'tpope/vim-repeat' " repeat prev command with .
+Plugin 'junegunn/fzf' " fuzzy finder
+Plugin 'junegunn/fzf.vim' " Things you can do with fzf and Vim.
+Plugin 'tpope/vim-commentary' " Comment stuff out
+Plugin 'vim-airline/vim-airline' " status/tabline for vim
+Plugin 'vim-airline/vim-airline-themes' " airline theme
+call vundle#end()
+filetype plugin indent on

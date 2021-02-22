@@ -13,7 +13,7 @@ brew 'zplug' # Vim plugin manager
 cask 'visual-studio-code' # Microsoft Visual Studio Code
 
 ## Utility
-brew 'rmtrash' 
+brew 'rmtrash'
 brew 'autojump'
 brew 'the_silver_searcher' # A code searching tool, with a focus on speed.
 
@@ -38,6 +38,7 @@ brew 'tree' # Display directories as tree
 brew 'fzf' # Command-line fuzzy finder written in Go
 brew 'htop-osx' # Improved top (interactive process viewer) for macOS
 brew 'z' # Tracks most-used directories to make cd smarter
+brew 'powerlevel9k'
 
 ## VM
 cask 'virtualbox' # Oracle VirtualBox
@@ -49,6 +50,8 @@ brew 'sqlite' # SQLite
 brew 'mysql' # MySQL
 
 ## Font
+brew 'fontconfig'
+brew 'fontforge'
 cask 'homebrew/cask-fonts/font-fontawesome'
 cask 'homebrew/cask-fonts/font-material-icons'
 cask 'homebrew/cask-fonts/font-devicons'
