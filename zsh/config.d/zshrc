@@ -123,6 +123,3 @@ if [ -f '/Users/zakktakk/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/
 
 # node.js
 export PATH=$HOME/.nodebrew/current/bin:$PATH
-
-# neptune.ai
-export NEPTUNE_API_TOKEN="eyJhcGlfYWRkcmVzcyI6Imh0dHBzOi8vYXBwLm5lcHR1bmUuYWkiLCJhcGlfdXJsIjoiaHR0cHM6Ly9hcHAubmVwdHVuZS5haSIsImFwaV9rZXkiOiIxZTkwNjY2ZS03Njc0LTQ5MTAtYjkxMy05YzEyYjNjMDZiMjUifQ=="
