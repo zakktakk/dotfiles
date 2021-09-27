@@ -38,7 +38,20 @@ brew 'tree' # Display directories as tree
 brew 'fzf' # Command-line fuzzy finder written in Go
 brew 'htop-osx' # Improved top (interactive process viewer) for macOS
 brew 'z' # Tracks most-used directories to make cd smarter
-brew 'powerlevel9k'
+brew 'nvim' # neovim
+brew 'powerlevel9k' # Zsh powerline
+brew 'reattach-to-user-namespace' # tmux copy
+brew 'the_silver_searcher' # enhanced code searching tool
+brew 'cookiecutter' # code template
+brew 'gcc'
+brew 'openssl'
+brew 'awscli'
+brew 'graphviz' # Graph visualization software
+brew 'pandoc' # Swiss-army knife of markup format conversion
+brew 'llvm'
+brew 'node'
+brew 'mecab'
+brew 'nmap'
 
 ## VM
 cask 'virtualbox' # Oracle VirtualBox
@@ -55,6 +68,8 @@ brew 'fontforge'
 cask 'homebrew/cask-fonts/font-fontawesome'
 cask 'homebrew/cask-fonts/font-material-icons'
 cask 'homebrew/cask-fonts/font-devicons'
+tap 'homebrew/cask-fonts'
+cask 'font-hack-nerd-font'
 
 ## Web
 brew 'wget' # Internet file retriever
@@ -64,17 +79,6 @@ brew 'hugo' # Configurable static site generator
 cask 'google-chrome'
 brew 'chromedriver'
 brew 'phantomjs' # Headless WebKit scriptable with a JavaScript API
-
-## Misc
-brew 'gcc'
-brew 'openssl'
-brew 'awscli'
-brew 'graphviz' # Graph visualization software
-brew 'pandoc' # Swiss-army knife of markup format conversion
-brew 'llvm'
-brew 'node'
-brew 'mecab'
-brew 'nmap'
 
 ## zsh
 brew 'zsh-completions' # Additional completion definitions for zsh
