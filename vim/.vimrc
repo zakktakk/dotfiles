@@ -46,6 +46,7 @@ set mouse=a " mouse mode available
 set nowritebackup " no backup, swp file
 set nobackup " never make backup file
 set noswapfile " never make swap file
+set guifont=Hack_Nerd_Font_Mono:h14
 
 " -- color setting
 set background=dark
@@ -78,7 +79,9 @@ nnoremap <S-Left>  <C-w><<CR>
 nnoremap <S-Right> <C-w><CR>
 nnoremap <S-Up>    <C-w>-<CR>
 nnoremap <S-Down>  <C-w>+<CR>
-nnoremap <silent><C-e> :NERDTreeTabsToggle<CR>
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-e> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
 nnoremap <silent> j gj
 nnoremap <silent> k gk
 nnoremap <Tab> %
@@ -95,7 +98,12 @@ imap [ []<LEFT>
 
 " Nerdtree setting
 let NERDTreeShowHidden = 1
-let g:nerdtree_tabs_open_on_console_startup=1
+let g:WebDevIconsUnicodeDecorateFolderNodes = 1
+let g:WebDevIconsNerdTreeBeforeGlyphPadding = ""
+let g:WebDevIconsUnicodeDecorateFolderNodes = v:true
+if exists('g:loaded_webdevicons')
+	call webdevicons#refresh()
+endif
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 let NERDTreeIgnore = ['\.pyc$','\.DS_Store$','\.swp$','\.git$','\.ipynb_checkpoints$']
 let g:NERDTreeIndicatorMapCustom = {
@@ -116,6 +124,11 @@ let g:gitgutter_max_signs = -1   " default value (otherwise)
 nmap ]h <Plug>(GitGutterNextHunk)
 nmap [h <Plug>(GitGutterPrevHunk)
 
+" airline setting
+let g:airline_powerline_fonts = 1
+
+" rainbow
+let g:rainbow_active = 1
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -126,12 +139,14 @@ Plugin 'preservim/nerdtree' " a file system explorer for the Vim
 Plugin 'tpope/vim-fugitive' " the premier Vim plugin for Git
 Plugin 'tpope/vim-surround' " The plugin provides mappings to easily delete, change and add such surroundings in pairs
 Plugin 'airblade/vim-gitgutter' " A Vim plugin which shows a git diff in the sign column
-Plugin 'ryanoasis/vim-devicons' " NerdTree devicon
 Plugin 'tpope/vim-repeat' " repeat prev command with .
 Plugin 'junegunn/fzf' " fuzzy finder
 Plugin 'junegunn/fzf.vim' " Things you can do with fzf and Vim.
 Plugin 'tpope/vim-commentary' " Comment stuff out
 Plugin 'vim-airline/vim-airline' " status/tabline for vim
 Plugin 'vim-airline/vim-airline-themes' " airline theme
+Plugin 'ryanoasis/vim-devicons' " NerdTree devicon
+Plugin 'vwxyutarooo/nerdtree-devicons-syntax' " NerdTree devicon syntax
+Plugin 'luochen1990/rainbow' " bracket colorizer
 call vundle#end()
 filetype plugin indent on
