@@ -75,7 +75,7 @@ cask 'font-hack-nerd-font'
 brew 'wget' # Internet file retriever
 cask 'postman' # API Development Environment
 cask 'paw' # The most advanced API tool for Mac
-brew 'hugo' # Configurable static site generator 
+brew 'hugo' # Configurable static site generator
 cask 'google-chrome'
 brew 'chromedriver'
 brew 'phantomjs' # Headless WebKit scriptable with a JavaScript API
@@ -102,9 +102,3 @@ cask 'zoomus'
 cask '1password'
 cask 'notion'
 cask 'alfred'
-cask 'onyx'
-
-## Apps from App Store
-mas 'Kindle', id: 405399194
-mas 'LINE', id: 539883307
-mas 'Magnet', id: 441258766
