@@ -1,7 +1,7 @@
 # Makefile for dotfile
 .PHONY: all brew cui cli gui vim vscode tmux zsh poetry
 
-all: clean cui
+all: clean cui gui
 clean: vim_clean poetry_clean tmux_clean vscode_clean zsh_clean
 
 cui: vim poetry tmux zsh
@@ -11,12 +11,16 @@ gui: vscode
 brew:
 	$(PWD)/brew/bin/setup.sh
 	brew bundle --verbose --no-lock --file=$(PWD)/brew/config.d/Brewfile
+	brew bundle --verbose --no-lock --file=$(PWD)/brew/config.d/Brewfile.mas
 
 git: git_clean
 	$(PWD)/git/bin/setup.sh
 
 vim: vim_clean
 	$(PWD)/vim/bin/setup.sh
+
+vscode: vscode_clean
+	$(PWD)/vscode/bin/setup.sh
 
 poetry: poetry_clean
 	$(PWD)/poetry/bin/setup.sh
