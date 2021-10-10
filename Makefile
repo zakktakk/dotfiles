@@ -1,10 +1,10 @@
 # Makefile for dotfile
-.PHONY: all brew cui cli gui vim vscode tmux zsh poetry
+.PHONY: all brew cui cli gui vim vscode git zsh poetry
 
 all: clean cui gui
-clean: vim_clean poetry_clean tmux_clean vscode_clean zsh_clean
+clean: vim_clean poetry_clean vscode_clean zsh_clean git_clean
 
-cui: vim poetry tmux zsh
+cui: brew vim poetry zsh git
 gui: vscode
 
 
@@ -24,9 +24,6 @@ vscode: vscode_clean
 
 poetry: poetry_clean
 	$(PWD)/poetry/bin/setup.sh
-
-vscode: vscode_clean
-	$(PWD)/vscode/bin/setup.sh
 
 zsh: zsh_clean
 	$(PWD)/zsh/bin/setup.sh
