@@ -1,0 +1,19 @@
+name: "build"
+
+on: [push]
+
+jobs:
+  dotfile_ci:
+
+    strategy:
+      matrix:
+        os: [macos-latest]
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build dotfile
+      run: |
+        cp -r $GITHUB_WORKSPACE $HOME/dotfiles && cd $HOME/dotfiles
+        make
