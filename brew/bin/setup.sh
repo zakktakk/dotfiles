@@ -4,7 +4,6 @@
 case `uname -s` in
 Darwin*)
   if [ `uname -m` = "arm64" ]; then
-  echo "hogee"
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
   else
     sudo mkdir /opt/homebrew-x86_64
