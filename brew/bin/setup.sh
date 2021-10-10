@@ -4,13 +4,11 @@
 case `uname -s` in
 Darwin*)
   if [ `uname -m` = "arm64" ]; then
+  echo "hogee"
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
   else
-    echo "hoge"
     sudo mkdir /opt/homebrew-x86_64
-    echo "hige"
     sudo chown `whoami`:staff /opt/homebrew-x86_64
-    echo "huga"
     curl -L https://github.com/Homebrew/brew/tarball/master | tar xz --strip 1 -C /opt/homebrew-x86_64
   fi
   ;;
