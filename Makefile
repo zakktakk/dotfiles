@@ -1,10 +1,10 @@
 # Makefile for dotfile
-.PHONY: all brew cui cli gui vim vscode git zsh poetry
+.PHONY: all brew cui gui
 
 all: clean cui gui
 clean: vim_clean poetry_clean vscode_clean zsh_clean git_clean
 
-cui: brew vim poetry zsh git
+cui: vim poetry zsh git
 gui: vscode
 
 
