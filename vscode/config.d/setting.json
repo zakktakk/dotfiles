@@ -10,7 +10,7 @@
             {
                 "scope":"string.quoted.docstring.multi.python",
                 "settings": {
-                    "foreground": "#69676c" //change to your preference
+                    "foreground": "#69676c"
                 }
             }
         ]
@@ -58,6 +58,6 @@
         "!Split sequence"
     ],
     "vsicons.associations.folderDefault.root_folder_light": n
-    
+
     ull
 }
