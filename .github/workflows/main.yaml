@@ -16,4 +16,4 @@ jobs:
     - name: Build dotfile
       run: |
         cp -r $GITHUB_WORKSPACE $HOME/dotfiles && cd $HOME/dotfiles
-        make
+        make all
