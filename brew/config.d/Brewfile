@@ -23,6 +23,7 @@ brew 'tig' # Text interface for Git repositories
 brew 'git-lfs' # Git extension for versioning large files
 cask 'github' # Extend your GitHub workflow beyond your browser
 brew 'ghq' # Remote repository management made easy
+brew 'pre-commit'
 
 ## Python
 brew 'python'
@@ -52,6 +53,8 @@ brew 'llvm'
 brew 'node'
 brew 'mecab'
 brew 'nmap'
+brew 'fig'
+brew 'lsd'
 
 ## VM
 cask 'virtualbox' # Oracle VirtualBox
@@ -87,6 +90,7 @@ brew 'zsh-syntax-highlighting' # Fish shell like syntax highlighting for zsh
 ## docker
 cask 'docker'
 brew 'docker-compose'
+brew 'dive'
 
 ## Keyboard & Mouse
 cask 'bettertouchtool'
@@ -102,3 +106,4 @@ cask 'zoomus'
 cask '1password'
 cask 'notion'
 cask 'alfred'
+cask 'netron'
