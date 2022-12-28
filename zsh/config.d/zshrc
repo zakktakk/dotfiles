@@ -1,3 +1,5 @@
+# Fig pre block. Keep at the top of this file.
+[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -36,6 +38,10 @@ compinit
 ## complement path
 ## ref:https://tkng.hatenablog.com/entry/20100712/1278896396
 setopt magic_equal_subst
+
+# to avoid terraform error
+# https://yaleman.org/post/2021/2021-01-01-apple-m1-terraform-and-golang/
+export GODEBUG=asyncpreemptoff=1
 
 # pyenv
 export PYENV_ROOT="$HOME/.pyenv"
@@ -91,7 +97,7 @@ source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 
 # fzf functions
 function select-history() {
-  BUFFER=$(history -n -r 1 | awk 'length < 120' | fzf --no-sort +m --query "$LBUFFER" --prompt="History > ")
+  BUFFER=$(history -n -r 1 | awk 'length < 400' | fzf --no-sort +m --query "$LBUFFER" --prompt="History > ")
   CURSOR=$#BUFFER
 }
 zle -N select-history
@@ -119,11 +125,8 @@ fbr() {
   git checkout $(echo "$branch" | awk '{print $1}' | sed "s/.* //")
 }
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f "$HOME/google-cloud-sdk/path.zsh.inc" ]; then . "$HOME/google-cloud-sdk/path.zsh.inc"; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f "$HOME/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOME/google-cloud-sdk/completion.zsh.inc"; fi
+source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
+source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
 
 # node.js
 export PATH=$HOME/.nodebrew/current/bin:$PATH
@@ -131,3 +134,17 @@ export PATH=$HOME/.nodebrew/current/bin:$PATH
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 (( ! ${+functions[p10k]} )) || p10k finalize
+
+# lsd alias
+alias ls='lsd'
+alias l='lsd -l'
+alias ll='lsd -l'
+alias la='lsd -a'
+alias lla='lsd -la'
+alias lt='lsd --tree'
+
+# md alias
+alias md='glow -p -'
+
+# Fig post block. Keep at the bottom of this file.
+[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
