@@ -145,3 +145,6 @@ alias md='glow -p -'
 
 # Fig post block. Keep at the bottom of this file.
 [[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
+
+# asdf setting
+. /usr/local/opt/asdf/libexec/asdf.sh

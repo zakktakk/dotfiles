@@ -55,6 +55,12 @@ brew 'mecab'
 brew 'nmap'
 brew 'fig'
 brew 'lsd'
+brew 'coreutils'
+
+## Package Manager
+brew 'asdf'
+brew 'gpg'
+brew 'gawk'
 
 ## VM
 cask 'virtualbox' # Oracle VirtualBox
