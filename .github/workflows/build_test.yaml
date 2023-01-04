@@ -4,7 +4,6 @@ on: [push]
 
 jobs:
   dotfile_ci:
-
     strategy:
       matrix:
         os: [macos-latest]

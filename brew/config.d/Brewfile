@@ -5,6 +5,10 @@ cask_args appdir: '/Applications'
 
 ## brew
 tap 'homebrew/cask'
+tap 'homebrew/bundle'
+tap 'homebrew/cask'
+tap 'homebrew/cask-versions'
+tap 'homebrew/core'
 brew 'mas' # Mac App Store command-line interface
 
 ## Editor
@@ -23,6 +27,7 @@ brew 'tig' # Text interface for Git repositories
 brew 'git-lfs' # Git extension for versioning large files
 cask 'github' # Extend your GitHub workflow beyond your browser
 brew 'ghq' # Remote repository management made easy
+brew 'git-secrets'
 brew 'pre-commit'
 
 ## Python
@@ -56,6 +61,7 @@ brew 'nmap'
 brew 'fig'
 brew 'lsd'
 brew 'coreutils'
+brew 'watch'
 
 ## Package Manager
 brew 'asdf'
@@ -110,6 +116,8 @@ cask 'zoomus'
 
 ## Util App
 cask '1password'
+cask 'appcleaner'
 cask 'notion'
 cask 'alfred'
 cask 'netron'
+cask 'the-unarchiver'
