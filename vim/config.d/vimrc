@@ -48,8 +48,8 @@ set nobackup " never make backup file
 set noswapfile " never make swap file
 
 " -- color setting
-set background=light
-colorscheme gruvbox_material
+set background=dark
+colorscheme hybrid
 
 " --- key mapping
 "  nnoremap -> normal mode keymapping
