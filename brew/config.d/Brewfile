@@ -4,22 +4,16 @@
 cask_args appdir: '/Applications'
 
 ## brew
-tap 'homebrew/cask'
 tap 'homebrew/bundle'
-tap 'homebrew/cask'
-tap 'homebrew/cask-versions'
-tap 'homebrew/core'
 brew 'mas' # Mac App Store command-line interface
 
 ## Editor
 brew 'vim' # Vi 'workalike' with many additional features
-brew 'zplug' # Vim plugin manager
 cask 'visual-studio-code' # Microsoft Visual Studio Code
 
 ## Utility
 brew 'rmtrash'
 brew 'autojump'
-brew 'the_silver_searcher' # A code searching tool, with a focus on speed.
 
 ## Git
 brew 'git' # Distributed revision control system
@@ -32,7 +26,6 @@ brew 'pre-commit'
 
 ## Python
 brew 'python'
-brew 'python@2'
 brew 'pyenv' # Python version management
 brew 'pyenv-virtualenv' # Pyenv plugin to manage virtualenv
 
@@ -45,7 +38,7 @@ brew 'fzf' # Command-line fuzzy finder written in Go
 brew 'htop-osx' # Improved top (interactive process viewer) for macOS
 brew 'z' # Tracks most-used directories to make cd smarter
 brew 'nvim' # neovim
-brew 'powerlevel9k' # Zsh powerline
+brew 'powerlevel10k' # Zsh powerline
 brew 'reattach-to-user-namespace' # tmux copy
 brew 'the_silver_searcher' # enhanced code searching tool
 brew 'cookiecutter' # code template
@@ -58,7 +51,6 @@ brew 'llvm'
 brew 'node'
 brew 'mecab'
 brew 'nmap'
-brew 'fig'
 brew 'lsd'
 brew 'coreutils'
 brew 'watch'
@@ -80,10 +72,9 @@ brew 'mysql' # MySQL
 ## Font
 brew 'fontconfig'
 brew 'fontforge'
-cask 'homebrew/cask-fonts/font-fontawesome'
-cask 'homebrew/cask-fonts/font-material-icons'
-cask 'homebrew/cask-fonts/font-devicons'
-tap 'homebrew/cask-fonts'
+cask 'font-fontawesome'
+cask 'font-material-icons'
+cask 'font-devicons'
 cask 'font-hack-nerd-font'
 
 ## Web
@@ -92,8 +83,6 @@ cask 'postman' # API Development Environment
 cask 'paw' # The most advanced API tool for Mac
 brew 'hugo' # Configurable static site generator
 cask 'google-chrome'
-brew 'chromedriver'
-brew 'phantomjs' # Headless WebKit scriptable with a JavaScript API
 
 ## zsh
 brew 'zsh-completions' # Additional completion definitions for zsh
@@ -112,12 +101,11 @@ cask 'cheatsheet'
 ## Chat Tools
 cask 'slack'
 cask 'discord'
-cask 'zoomus'
+cask 'zoom'
 
 ## Util App
 cask '1password'
 cask 'appcleaner'
 cask 'notion'
 cask 'alfred'
-cask 'netron'
 cask 'the-unarchiver'

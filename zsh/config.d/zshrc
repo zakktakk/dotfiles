@@ -1,5 +1,3 @@
-# Fig pre block. Keep at the top of this file.
-[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -16,21 +14,6 @@ path=(
     /opt/homebrew/bin(N-/)
     $path
 )
-
-## use x86 brew command, if arch enable
-if [[ "${(L)$( uname -s )}" == darwin ]] && (( $+commands[arch] )); then
-    alias brew="arch -arch x86_64 /usr/local/bin/brew"
-    alias x64='exec arch -arch x86_64 "$SHELL"'
-    alias a64='exec arch -arch arm64e "$SHELL"'
-    switch-arch() {
-        if  [[ "$(uname -m)" == arm64 ]]; then
-            arch=x86_64
-        elif [[ "$(uname -m)" == x86_64 ]]; then
-            arch=arm64e
-        fi
-        exec arch -arch $arch "$SHELL"
-    }
-fi
 
 autoload -Uz compinit
 compinit
@@ -52,8 +35,14 @@ if command -v pyenv 1>/dev/null 2>&1; then
 fi
 eval "$(pyenv virtualenv-init -)"
 
+# eneble powerlevel10k theme
+source $(brew --prefix)/share/powerlevel10k/powerlevel10k.zsh-theme
+
+# zprezto
+source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+
 # zplug
-export ZPLUG_HOME=$HOME/.config/zplug
+export ZPLUG_HOME=$HOME/.zplug
 source $ZPLUG_HOME/init.zsh
 
 zplug "zsh-users/zsh-autosuggestions"
@@ -83,17 +72,14 @@ zplug "modules/homebrew", from:prezto
 zplug "modules/ruby", from:prezto
 zplug "rupa/z", use:z.sh
 
-if ! zplug check --verbose; then
-  printf 'Install? [y/N]: '
-  if read -q; then
-    echo; zplug install
-  fi
-fi
+# FIXME: よくわからないがcheckが通らないのでコメントアウトする
+# if ! zplug check --verbose; then
+#   printf 'Install? [y/N]: '
+#   if read -q; then
+#     echo; zplug install
+#   fi
+# fi
 zplug load
-
-# zprezto
-source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme
-source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 
 # fzf functions
 function select-history() {
@@ -125,8 +111,6 @@ fbr() {
   git checkout $(echo "$branch" | awk '{print $1}' | sed "s/.* //")
 }
 
-source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
-source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -142,9 +126,4 @@ alias lt='lsd --tree'
 
 # md alias
 alias md='glow -p -'
-
-# Fig post block. Keep at the bottom of this file.
-[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
-
-# asdf setting
-. /usr/local/opt/asdf/libexec/asdf.sh
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"

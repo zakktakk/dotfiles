@@ -11,7 +11,6 @@ gui: vscode
 brew:
 	$(PWD)/brew/bin/setup.sh
 	brew bundle --verbose --no-lock --file=$(PWD)/brew/config.d/Brewfile
-	brew bundle --verbose --no-lock --file=$(PWD)/brew/config.d/Brewfile.mas
 
 git: git_clean
 	$(PWD)/git/bin/setup.sh
